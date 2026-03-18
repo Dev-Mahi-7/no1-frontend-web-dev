@@ -11,22 +11,29 @@ const menu: Props[] = [
     name: "Closures",
     href: "/closures",
   },
+  {
+    name: "Promises",
+    href: "/promises",
+  },
 ];
 
 const HomeContainer = () => {
-  return <div className="h-screen " >
-    <div className="max-w-300 grid grid-cols-6 bg-amber-100 h-full mx-auto p-3">
-        {
-            menu.map((item,idx)=>(
-                <div key={idx} className="h-30 border border-amber-50 rounded-md bg-amber-50 group flex active:scale-95 cursor-pointer items-center justify-center">
-                    <Link href={item.href} className="text-3xl  group-hover:font-bold" >{item.name}</Link>
-                </div>
-            ))
-        }
-
+  return (
+    <div className="h-screen ">
+      <div className="max-w-300 grid grid-cols-6 bg-amber-100 h-full mx-auto p-3">
+        {menu.map((item, idx) => (
+          <div
+            key={idx}
+            className="h-30 border border-amber-50 rounded-md bg-amber-50 group flex active:scale-95 cursor-pointer items-center justify-center"
+          >
+            <Link href={item.href} className="text-3xl  group-hover:font-bold">
+              {item.name}
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
-    
-  </div>;
+  );
 };
 
 export default HomeContainer;
